@@ -47,7 +47,7 @@ def convertToWav(uploaded_audio):
         audio_data = uploaded_audio.read()
         audio_segment = AudioSegment.from_file(io.BytesIO(audio_data))
         wav_data = io.BytesIO()
-        audio_segment.export(wav_data, format="wav",codec="pcm_s16le")
+        audio_segment.export(wav_data, format="wav")
         return wav_data
     except:
         st.error("Uploaded file may be corrupted")
