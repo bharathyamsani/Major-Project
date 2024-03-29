@@ -49,8 +49,8 @@ def convertToWav(uploaded_audio):
         wav_data = io.BytesIO()
         audio_segment.export(wav_data, format="wav")
         return wav_data
-    except:
-        st.error("Uploaded file may be corrupted")
+    except Exception as e:
+        st.error("Uploaded file may be corrupted",e)
         return None
 
 def show():
